@@ -1,0 +1,94 @@
+.products-wrapper {
+  background-color: $color3;
+  color: $color6;
+
+  .products {
+    &-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media (width <= 1200px) {
+        grid-template-columns: 1fr;
+      }
+
+      &-title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 32px;
+        padding: 3vh 30px 30px 60px;
+        text-align: justify;
+        .first-word {
+          color: $color1;
+        }
+      }
+    }
+
+    .products-info {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      // width: 100%;
+      height: 20vh;
+      // opacity: 0;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+
+      font-size: 15px;
+    }
+
+    // &-empty-icon {
+    //   color: $color5;
+    //   font-size: 20px;
+    //   // margin-top: 20px;
+    // }
+    .categories {
+      position: relative;
+      display: grid;
+      row-gap: 10px;
+      justify-items: start;
+      margin: 3vh 60px;
+      color: $color8;
+
+      &-category {
+        display: grid;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: left;
+        width: 100%;
+        &-name {
+          margin-bottom: 10px;
+        }
+
+        &-name::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      .products {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+
+        .product {
+          display: grid;
+          grid-template-columns: 5fr 1fr;
+          align-items: center;
+          padding: 10px 15px;
+          font-size: 16px;
+          background-color: $color2;
+          box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
+          border-radius: $border-radius1;
+          cursor: pointer;
+          &-name::first-letter {
+            text-transform: uppercase;
+          }
+          .plus-icon {
+            justify-self: end;
+            color: $color9;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
