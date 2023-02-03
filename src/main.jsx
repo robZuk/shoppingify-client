@@ -29,12 +29,10 @@ import Login from "./components/user/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
-      <Route path="/" element={<Dashboard />}>
-        <Route path="contacts" element={<div>Contacts</div>} />
-      </Route>
-      <Route path="/login" element={<Login />}></Route>
-    </>
+    <Route path="/" element={<Dashboard />}>
+      <Route path="contacts" element={<div>Contacts</div>} />
+    </Route>
+    // <Route path="/login" element={<Login />}></Route>
   )
 );
 
