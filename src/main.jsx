@@ -1,9 +1,9 @@
 // import React from "react";
 // import ReactDOM from "react-dom/client";
-// import { store } from "./app/store";
-// import { Provider } from "react-redux";
-// import { ToastContainer } from "react-toastify";
-// import "./styles/main.scss";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "./styles/main.scss";
 // import App from "./App";
 // import { BrowserRouter } from "react-router-dom";
 
@@ -25,6 +25,7 @@ import {
   Link,
 } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import Login from "./components/user/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,11 +33,14 @@ const router = createBrowserRouter(
       <Route path="/" element={<Dashboard />}>
         <Route path="contacts" element={<div>Contacts</div>} />
       </Route>
-      <Route path="/login" element={<div>login</div>}></Route>
+      <Route path="/login" element={<Login />}></Route>
     </>
   )
 );
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+    <ToastContainer />
+  </Provider>
 );
