@@ -23,7 +23,11 @@ const getProducts = async (keyword = "", token) => {
     },
   };
   // console.log(keyword);
-  const response = await axios.get(API_URL + `?keyword=${keyword}`, config);
+  const response = await axios.get(
+    "https://shoppingify-backend-61bb.onrender.com/api/products/" +
+      `?keyword=${keyword}`,
+    config
+  );
 
   return response.data;
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
-import { getProducts } from "../../features/products/productSlice";
+import { getProducts } from "./features/products/productSlice";
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function Dashboard() {
 
   useEffect(() => {
     dispatch(getProducts(searchValue ? searchValue : ""));
-  }, []);
+  }, [dispatch]);
 
   console.log(products);
 
